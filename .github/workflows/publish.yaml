@@ -21,7 +21,11 @@ jobs:
       - run: npx playwright install --with-deps
       
       - run: npm ci
-
+      - name: Set Git config
+        run: |
+          git config --local user.email "deepak"
+          git config --local user.name "deepak"
+          
       - run: npm run build
 
       - run: npm version patch
