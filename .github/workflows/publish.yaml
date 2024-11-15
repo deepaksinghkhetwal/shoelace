@@ -19,19 +19,15 @@ jobs:
           scope: '@deepaksinghkhetwal'
 
       - run: npx playwright install --with-deps
+      
       - run: npm ci
 
       - run: npm run build
-
-      - name: Set Git config
-        run: |
-          git config --local user.email "deepak"
-          git config --local user.name "deepak"
 
       - run: npm version patch
 
       - run: git push --follow-tags
 
-      - run: npm publish --verbose
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
