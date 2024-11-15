@@ -35,4 +35,3 @@ jobs:
       - run: npm publish --verbose
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-          NPM_CONFIG_TOKEN: ${{ secrets.PAT }}
